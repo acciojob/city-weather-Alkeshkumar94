@@ -20,6 +20,7 @@ const App = () => {
         `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${API_KEY}&units=metric`
       );
       setWeather(response.data);
+      setQuery('');
     } catch (err) {
       setError('Unable to fetch weather data. Please try again.');
     }
