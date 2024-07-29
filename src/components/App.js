@@ -1,8 +1,7 @@
-
 import React, { useState } from 'react';
 import './../styles/App.css';
+import 'regenerator-runtime/runtime'; 
 import axios from "axios";
-
 
 const App = () => {
   const [query, setQuery] = useState('');
@@ -15,13 +14,16 @@ const App = () => {
   const fetchWeather = async () => {
     setLoading(true);
     setError('');
+    console.log(`Fetching weather for: ${query}`); 
     try {
-      const response = await fetch(
+      const response = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${API_KEY}&units=metric`
       );
+      console.log('Weather data:', response.data); 
       setWeather(response.data);
-      setQuery('');
+      setQuery(''); // Clear the search input
     } catch (err) {
+      console.error('Error fetching weather data:', err); 
       setError('Unable to fetch weather data. Please try again.');
     }
     setLoading(false);
