@@ -1,7 +1,11 @@
 
 import React, { useState } from 'react';
 import './../styles/App.css';
+<<<<<<< HEAD
 import axios from "axios";
+=======
+
+>>>>>>> 3bf893c0671f769e6dbffe2291e2282a87a63124
 
 const App = () => {
   const [query, setQuery] = useState('');
@@ -15,7 +19,7 @@ const App = () => {
     setLoading(true);
     setError('');
     try {
-      const response = await axios.get(
+      const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${API_KEY}&units=metric`
       );
       setWeather(response.data);
