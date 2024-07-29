@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import './../styles/App.css';
 
-import axios from 'axios';
 
 const App = () => {
   const [query, setQuery] = useState('');
