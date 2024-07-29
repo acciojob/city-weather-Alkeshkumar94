@@ -14,16 +14,13 @@ const App = () => {
   const fetchWeather = async () => {
     setLoading(true);
     setError('');
-    console.log(`Fetching weather for: ${query}`); 
     try {
       const response = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${API_KEY}&units=metric`
       );
-      console.log('Weather data:', response.data); 
       setWeather(response.data);
-      setQuery(''); // Clear the search input
+      setQuery(''); 
     } catch (err) {
-      console.error('Error fetching weather data:', err); 
       setError('Unable to fetch weather data. Please try again.');
     }
     setLoading(false);
