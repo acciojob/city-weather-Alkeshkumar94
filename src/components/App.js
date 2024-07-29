@@ -42,14 +42,14 @@ const App = () => {
       {error && <p>{error}</p>}
       {weather && (
         <div className="weather">
-          <h2>{weather.name}</h2>
-          <p>{weather.weather[0].description}</p>
-          <p>{weather.main.temp}°C</p>
-          <img
-            src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
-            alt="weather icon"
-          />
-        </div>
+    <h2>{weather.name}</h2>
+    <p>{weather.weather && weather.weather[0] && weather.weather[0].description}</p>
+    <p>{weather.main && weather.main.temp}°C</p>
+    <img
+      src={weather.weather && weather.weather[0] && `http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
+      alt="weather icon"
+    />
+  </div>
       )}
     </div>
   );
