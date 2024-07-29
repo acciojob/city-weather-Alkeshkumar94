@@ -1,11 +1,8 @@
 
 import React, { useState } from 'react';
 import './../styles/App.css';
-<<<<<<< HEAD
 import axios from "axios";
-=======
 
->>>>>>> 3bf893c0671f769e6dbffe2291e2282a87a63124
 
 const App = () => {
   const [query, setQuery] = useState('');
