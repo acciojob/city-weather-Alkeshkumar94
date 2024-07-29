@@ -17,7 +17,7 @@ const App = () => {
     setLoading(true);
     setError('');
     try {
-      const response = await axios.get(
+      const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${API_KEY}&units=metric`
       );
       setWeather(response.data);
